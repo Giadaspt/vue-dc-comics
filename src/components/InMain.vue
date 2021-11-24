@@ -4,7 +4,9 @@
     class="container contain"
     v-for="(item, index) in marketing" 
     :key="index">
-      <img src="item.image" alt="">
+    <div class="marketImage">
+      <img :src="item.image" alt="item.text">
+    </div>
       <h4>{{item.text}}</h4>
     </div>
   </div>
@@ -18,23 +20,23 @@ export default {
    return{
      marketing: [
        {
-         image: './assets/img/buy-comics-digital-comics.png',
+         image: 'buy-comics-digital-comics.png',
          text: 'digital comics'
        },
        {
-         image: './assets/img/buy-comics-merchandise.png',
+         image: 'buy-comics-merchandise.png',
          text: 'dc merchandise '
        },
        {
-         image: './assets/img/buy-comics-subscriptions.png',
+         image: 'buy-comics-subscriptions.png',
          text: 'subscription'
        },
        {
-         image: './assets/img/buy-comics-shop-locator.png',
+         image: 'img/buy-comics-shop-locator.png',
          text: 'comic shop locator'
        },
        {
-         image: '../assets/img/buy-dc-power-visa.svg',
+         image: 'img/buy-dc-power-visa.svg',
          text: 'dc power visa'
        },
      ],
@@ -50,6 +52,11 @@ export default {
     height: 100px;
     background-color: rgb(2,130,249);
     @include stayFlat;
+
+    .marketImage {
+      width: 40px;
+      height: 40px;
+    }
   }
 
 </style>
