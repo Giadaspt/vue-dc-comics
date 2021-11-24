@@ -4,3 +4,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@mixin stayFlat {
+  display: flex;
+  align-items: center;
+}
+

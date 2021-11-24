@@ -7,8 +7,13 @@
     </div>
     <nav>
       <ul>
-        <li v-for="(item, index) in menu" :key="index">
-          <a :href="item.url"> {{item.nav}} </a>
+        <li 
+          v-for="(item, index) in menu" :key="index">
+          <a 
+            @click="item.isActive = !item.isActive"
+            :class="{active: item.isActive}" 
+            :href="item.url"> {{item.nav}} 
+          </a>
         </li>
       </ul>
     </nav>
@@ -27,44 +32,56 @@ export default {
         {
           url: '/characters',
           nav: 'characters',
+          isActive: false,
         },
         {
           url: '/comics',
           nav: 'comics',
+          isActive: true,
         },
         {
           url: '/movies',
           nav: 'movies',
+          isActive: false,
         },
         {
           url: '/tv',
           nav: 'tv',
+          isActive: false,
         },
         {
           url: '/games',
           nav: 'games',
+          isActive: false,
         },
         {
           url: '/collectibles',
           nav: 'collectibles',
+          isActive: false,
         },
         {
           url: '/videos',
           nav: 'videos',
+          isActive: false,
         },
         {
           url: '/fans',
           nav: 'fans',
+          isActive: false,
         },
         {
           url: '/news',
           nav: 'news',
+          isActive: false,
         },
         {
           url: '/shop',
           nav: 'shop',
+          isActive: false,
         },
-      ]
+      ],
+
+      
     }
   }
 }
@@ -74,17 +91,26 @@ export default {
 @import "../assets/style/mixin.scss";
 
   header{
-    @include position();
     height: 80px;
+    @include position();
 
     .image {
       width: 80px;
       height: 80px;
     }
 
-    a{
-      @include position();
-      color: $textHeadColor;
+    ul {
+      @include stayFlat;
+      li {
+        padding-right: 32px;
+        a{
+          padding-bottom: 32px;
+          &:hover{
+            color: rgb(2,130,249);
+          }
+        }
+      }
     }
+
   }
 </style>
