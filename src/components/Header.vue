@@ -12,7 +12,7 @@
           <a 
             @click="item.isActive = !item.isActive"
             :class="{active: item.isActive}" 
-            :href="item.url"> {{item.nav}} 
+            href="#"> {{item.nav}} 
           </a>
         </li>
       </ul>
@@ -88,15 +88,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/style/var.scss";
 @import "../assets/style/mixin.scss";
+@import "../assets/style/general.scss";
 
   header{
-    height: 80px;
+
     @include position();
 
     .image {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
+      padding: 12px;
       @include stayFlat;
     }
 
@@ -105,9 +108,9 @@ export default {
       li {
         padding-right: 32px;
         a{
-          padding-bottom: 26px;
+          padding-bottom: 27px;
           &:hover{
-            color: rgb(2,130,249);
+            color: $colorActive;
           }
         }
       }

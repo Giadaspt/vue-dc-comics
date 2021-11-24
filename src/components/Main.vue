@@ -9,9 +9,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/style/var.scss";
+
   main {
     height: 100px;
-    background-color: rgb(0,0,0);
+    background-color: $textHeadColor;
 
   }
 </style>

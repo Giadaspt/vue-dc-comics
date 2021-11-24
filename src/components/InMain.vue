@@ -1,13 +1,14 @@
 <template>
-  <div class="inMain">
-    <div 
-    class="container contain"
-    v-for="(item, index) in marketing" 
-    :key="index">
-    <div class="marketImage">
-      <img :src="item.image" alt="item.text">
-    </div>
-      <h4>{{item.text}}</h4>
+  <div class="inMain ">
+    <div class="containerInMain ">
+      <div class="market"
+        v-for="(item, index) in marketing" 
+        :key="index">
+        <div class="marketImage">
+          <img :src="item.image" alt="item.text">
+        </div>
+        <h4>{{item.text}}</h4>
+      </div>
     </div>
   </div>
 </template>
@@ -20,23 +21,23 @@ export default {
    return{
      marketing: [
        {
-         image: 'buy-comics-digital-comics.png',
+         image: require('../assets/img/buy-comics-digital-comics.png'),
          text: 'digital comics'
        },
        {
-         image: 'buy-comics-merchandise.png',
+         image: require('../assets/img/buy-comics-merchandise.png'),
          text: 'dc merchandise '
        },
        {
-         image: 'buy-comics-subscriptions.png',
+         image: require('../assets/img/buy-comics-subscriptions.png'),
          text: 'subscription'
        },
        {
-         image: 'img/buy-comics-shop-locator.png',
+         image: require('../assets/img/buy-comics-shop-locator.png'),
          text: 'comic shop locator'
        },
        {
-         image: 'img/buy-dc-power-visa.svg',
+         image: require('../assets/img/buy-dc-power-visa.svg'),
          text: 'dc power visa'
        },
      ],
@@ -46,17 +47,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/style/var.scss";
 @import "../assets/style/mixin.scss";
-
-  .inMain {
-    height: 100px;
-    background-color: rgb(2,130,249);
-    @include stayFlat;
-
-    .marketImage {
-      width: 40px;
-      height: 40px;
-    }
-  }
+@import "../assets/style/inMain.scss";
+@import "../assets/style/general.scss";
 
 </style>

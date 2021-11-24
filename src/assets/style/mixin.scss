@@ -6,6 +6,13 @@
   align-content: center;
 }
 
+@mixin contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 @mixin stayFlat {
   display: flex;
   align-items: center;
