@@ -1,20 +1,33 @@
 <template>
   <footer>
-    <div class="container">
-      <ul>
-        <li v-for="(item, index) in dc" :key="`bottom${index}`">
-          {{item.title }} 
-        </li>
-        <li v-for="text in getIndex[indexArr]" :key="`text${text}`">
-          {{text.indexArr}}
-        </li>
-
-      </ul>
-      <div class="DcImage">
-        <img :src="image" alt="DC">
+    <div class="leftFoot">
+      <div class="contain container">
+        <ul>
+          <li v-for="(item, index) in dc" :key="`bottom${index}`">
+            {{item.title }} 
+          </li>
+          <li v-for="text in getIndex[indexArr]" :key="`text${text}`">
+            {{text.indexArr}}
+          </li>
+        </ul>
+        <div class="DcImage">
+          <img :src="imageDc" alt="">
+        </div>
       </div>
     </div>
-    <div class="footerBottom"></div>
+    <div class="footerBottom">
+      <div class="container">
+        <button> sign-up now! </button>
+        <div class="wrap ">
+        <h4>{{follow}}</h4>
+        <div 
+          class="socialLogo"
+          v-for="(img, index) in social" :key="`social${index}`">
+          <a href="#"> <img :src="img.image" alt=""> </a>
+        </div>
+        </div>
+      </div>
+    </div>
   </footer>
 </template>
 
@@ -24,8 +37,29 @@ export default {
 
   data(){
     return {
-      image: require('../assets/img/dc-logo-bg.png'),
       indexArr: -1,
+
+      imageDc: require('../assets/img/dc-logo-bg.png'),
+      
+      follow: 'follow us',
+
+      social: [
+        {
+          image: require('../assets/img/footer-facebook.png'),
+        },
+        {
+          image: require('../assets/img/footer-twitter.png'),
+        },
+        {
+          image: require('../assets/img/footer-youtube.png'),
+        },
+        {
+          image: require('../assets/img/footer-pinterest.png'),
+        },
+        {
+          image: require('../assets/img/footer-periscope.png'),
+        },
+      ],
       dc: [
         {
           title: 'dc comics',
