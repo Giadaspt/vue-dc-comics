@@ -1,5 +1,5 @@
 <template>
-  <main></main>
+  <main> </main>
 </template>
 
 <script>
@@ -8,6 +8,10 @@ export default {
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
+  main {
+    height: 100px;
+    background-color: rgb(0,0,0);
 
+  }
 </style>

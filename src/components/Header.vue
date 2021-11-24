@@ -95,8 +95,9 @@ export default {
     @include position();
 
     .image {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
+      @include stayFlat;
     }
 
     ul {
@@ -104,7 +105,7 @@ export default {
       li {
         padding-right: 32px;
         a{
-          padding-bottom: 32px;
+          padding-bottom: 26px;
           &:hover{
             color: rgb(2,130,249);
           }
