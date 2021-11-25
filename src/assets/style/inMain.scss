@@ -14,7 +14,7 @@
     width: 80%;
     margin: 0 auto;
     .market {
-      @include position ('both');
+      @include position ('align');
       width: calc(100% / 5);
     }
   }

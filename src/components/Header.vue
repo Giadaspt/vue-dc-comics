@@ -8,7 +8,7 @@
     <nav>
       <ul>
         <li 
-          v-for="(item, index) in menu" :key="index">
+          v-for="(item, index) in navbar" :key="index">
           <a 
             @click="[getIndex(index),item.isActive = !item.isActive]"
             :class="{active: index == indexArr}" 
@@ -23,65 +23,15 @@
 </template>
 
 <script>
+import navbar from "../assets/data/navbar.js"
+
 export default {
   name: "Header",
 
   data(){
     return {
       indexArr: -1, 
-       
-      menu: [
-        {
-          url: '/characters',
-          nav: 'characters',
-          isActive: true,
-        },
-        {
-          url: '/comics',
-          nav: 'comics',
-          isActive: true,
-        },
-        {
-          url: '/movies',
-          nav: 'movies',
-          isActive: true,
-        },
-        {
-          url: '/tv',
-          nav: 'tv',
-          isActive: true,
-        },
-        {
-          url: '/games',
-          nav: 'games',
-          isActive: true,
-        },
-        {
-          url: '/collectibles',
-          nav: 'collectibles',
-          isActive: true,
-        },
-        {
-          url: '/videos',
-          nav: 'videos',
-          isActive: true,
-        },
-        {
-          url: '/fans',
-          nav: 'fans',
-          isActive: true,
-        },
-        {
-          url: '/news',
-          nav: 'news',
-          isActive: true,
-        },
-        {
-          url: '/shop',
-          nav: 'shop',
-          isActive: true,
-        },
-      ],
+      navbar,
     }
   },
 

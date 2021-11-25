@@ -12,9 +12,11 @@ main {
   @include position('both');
   width: 150px;
   height: 40px;
-  background-color: $colorActive;
+  
   h3 {
     color: $textInColorBg;
-    padding-left: 18px;
+    padding: 16px;
+    margin-bottom: 58px;
+    background-color: $colorActive;
   }
 }
