@@ -6,14 +6,14 @@
         v-for="(item, index) in dc" :key="`bottom${index}`">
           <li >
             <h4>{{item.title }}</h4>  
-            <p v-if="getIndex">
-              {{item.text[index]}}
+            <p v-if="getIndex(index) && index == indexArr">
+              {{item.text[indexArr]}}
             </p>
  
           </li>
         </ul>
         <div class="DcImage">
-          <img :src="imageDc" alt="">
+          <img :src="imageDc" :alt="imageDc">
         </div>
       </div>
     </div>
@@ -116,18 +116,20 @@ export default {
 
   methods: {
     getIndex(index){
-      this.dc[index].text[index] = index;
-      this.indexArr == index
+      this.indexArr == this.getText(index)
       
       console.log('ok',this.indexArr);
       console.log('ok2',index);
     },
 
-    // getText(index){
-    //   this.dc[index].text.forEach(text => { 
-    //     console.log(text);
-    //   });
-    // }
+    getText(index){
+      this.dc[index].text.forEach(text => { 
+        if (text[index] == this.indexArr){
+          return text[index]
+        }
+        console.log('ce la faremo',text);
+      });
+    }
   }
 }
 </script>
