@@ -5,7 +5,7 @@
         v-for="(item, index) in marketing" 
         :key="index">
         <div class="marketImage">
-          <img :src="item.image" alt="item.text">
+          <img :src="item.image" :alt="item.text">
         </div>
         <h4>{{item.text}}</h4>
       </div>

@@ -10,8 +10,8 @@
         <li 
           v-for="(item, index) in menu" :key="index">
           <a 
-            @click="item.isActive = !item.isActive"
-            :class="{active: item.isActive}" 
+            @click="[getIndex(index),item.isActive = !item.isActive]"
+            :class="{active: index == indexArr}" 
             href="#"> {{item.nav}} 
           </a>
         </li>
@@ -28,11 +28,13 @@ export default {
 
   data(){
     return {
+      indexArr: -1, 
+       
       menu: [
         {
           url: '/characters',
           nav: 'characters',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/comics',
@@ -42,46 +44,54 @@ export default {
         {
           url: '/movies',
           nav: 'movies',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/tv',
           nav: 'tv',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/games',
           nav: 'games',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/collectibles',
           nav: 'collectibles',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/videos',
           nav: 'videos',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/fans',
           nav: 'fans',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/news',
           nav: 'news',
-          isActive: false,
+          isActive: true,
         },
         {
           url: '/shop',
           nav: 'shop',
-          isActive: false,
+          isActive: true,
         },
       ],
+    }
+  },
 
-      
+  methods: {
+    
+    getIndex(index){
+    this.indexArr = index;
+    
+    console.log('ok',this.indexArr);
+    console.log('ok2',index);
     }
   }
 }

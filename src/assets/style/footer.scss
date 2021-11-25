@@ -27,7 +27,7 @@ li {
   @include stayFlat;
   height: 80px;
   background-color: $footGrey;
-  color: $textInColorBg;
+  color:$colorActive;
 
   .container {
     @include position;
