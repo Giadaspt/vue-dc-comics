@@ -4,7 +4,7 @@
     <div class="contain container">
       <div class="listFooter">
         <ul 
-        v-for="(item, index) in dc" :key="`bottom${index}`">
+        v-for="(item, index) in list_footer" :key="`bottom${index}`">
           <li>
             <h4>{{item.title }}</h4>  
             <p v-for="(text, index) in item.text" :key="`text${index}`">
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import list_footer from "../assets/data/footer-list.js"
+
 export default {
   name: "Footer",
 
@@ -45,6 +47,8 @@ export default {
       imageDc: require('../assets/img/dc-logo-bg.png'),
       
       follow: 'follow us',
+
+      list_footer,
 
       social: [
         {
@@ -63,55 +67,6 @@ export default {
           image: require('../assets/img/footer-periscope.png'),
         },
       ],
-      dc: [
-        {
-          title: 'dc comics',
-          text: [
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-          ],
-          
-        }, 
-        {
-          title: 'shop',
-          text: [
-            'lorem',
-            'lorem',
-          ],
-        },
-        {
-          title: 'dc',
-           text: [
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-          ],
-          
-        },
-        {
-          title: 'sites',
-           text: [
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-            'lorem',
-          ],
-        },
-      ]
     }
   },
 }
