@@ -11,10 +11,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/style/var.scss";
-
-  main {
-    height: 100px;
-    background-color: $textHeadColor;
-
-  }
+@import "../assets/style/main.scss";
 </style>

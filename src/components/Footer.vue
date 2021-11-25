@@ -2,12 +2,14 @@
   <footer>
     <div class="leftFoot">
       <div class="contain container">
-        <ul>
-          <li v-for="(item, index) in dc" :key="`bottom${index}`">
-            {{item.title }} 
-          </li>
-          <li v-for="text in getIndex[indexArr]" :key="`text${text}`">
-            {{text.indexArr}}
+        <ul 
+        v-for="(item, index) in dc" :key="`bottom${index}`">
+          <li >
+            <h4>{{item.title }}</h4>  
+            <p v-if="getIndex">
+              {{item.text[index]}}
+            </p>
+ 
           </li>
         </ul>
         <div class="DcImage">
@@ -76,7 +78,7 @@ export default {
         }, 
         {
           title: 'shop',
-           text: [
+          text: [
             'lorem',
             'lorem',
           ],
@@ -114,12 +116,18 @@ export default {
 
   methods: {
     getIndex(index){
-      if(this.indexArr == index){
-        return this.indexArr 
-      }
+      this.dc[index].text[index] = index;
+      this.indexArr == index
+      
       console.log('ok',this.indexArr);
       console.log('ok2',index);
-    }
+    },
+
+    // getText(index){
+    //   this.dc[index].text.forEach(text => { 
+    //     console.log(text);
+    //   });
+    // }
   }
 }
 </script>
