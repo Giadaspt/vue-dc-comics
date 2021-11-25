@@ -104,17 +104,17 @@ export default {
 
   header{
 
-    @include position();
+    @include position('both');
 
     .image {
       width: 60px;
       height: 60px;
       padding: 12px;
-      @include stayFlat;
+      @include position('align');
     }
 
     ul {
-      @include stayFlat;
+      @include position ('align');
       li {
         padding-right: 32px;
         a{

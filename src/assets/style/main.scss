@@ -1,5 +1,20 @@
 main {
-    height: 100px;
-    background-color: $textHeadColor;
+  background-color: $textHeadColor;
+}
 
+.contain {
+  @include center('both');
+  flex-wrap: wrap;
+  padding-top: 24px;
+}
+
+.currentSeries{
+  @include position('both');
+  width: 150px;
+  height: 40px;
+  background-color: $colorActive;
+  h3 {
+    color: $textInColorBg;
+    padding-left: 18px;
   }
+}

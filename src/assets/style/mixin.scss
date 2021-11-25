@@ -1,19 +1,27 @@
 
-@mixin position {
+@mixin position ($type: 'both') {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
+  @if $type == 'justify'{
+    justify-content: space-between;
+  } @else if $type == 'align' {
+    align-items: center;
+  } @else if $type == 'both' {
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
 }
 
-@mixin contain {
+@mixin center ($type: 'both') {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin stayFlat {
-  display: flex;
-  align-items: center;
+  @if $type == 'justify'{
+    justify-content: center;
+  } @else if $type == 'align' {
+    align-items: center;
+  } @else if $type == 'both' {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }
 

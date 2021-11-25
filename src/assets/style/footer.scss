@@ -5,7 +5,7 @@ footer {
 }
 
 .contain {
-  @include  position;
+  @include  position('both');
   height: 50vh;
   overflow: hidden;
 }
@@ -24,13 +24,13 @@ li {
 }
 
 .footerBottom {
-  @include stayFlat;
+  @include position('both');
   height: 80px;
   background-color: $footGrey;
   color:$colorActive;
 
   .container {
-    @include position;
+    @include position ('both');
   }
 
   button {
@@ -43,7 +43,7 @@ li {
 }
 
 .wrap {
-  @include position;
+  @include position ('both');
   width: 50%;
   .socialLogo {
     width: 40px;
