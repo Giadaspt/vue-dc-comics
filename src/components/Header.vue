@@ -53,8 +53,8 @@ export default {
 @import "../assets/style/general.scss";
 
   header{
-
     @include position('both');
+    padding: 20px;
 
     .image {
       width: 60px;
@@ -68,7 +68,7 @@ export default {
       li {
         padding-right: 32px;
         a{
-          padding-bottom: 27px;
+          padding-bottom: 40px;
           &:hover{
             color: $colorActive;
           }

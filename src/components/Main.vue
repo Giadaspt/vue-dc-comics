@@ -12,6 +12,10 @@
     :imageCard="card.thumb"
     :textUnder="card.series"
     />
+
+    <div class="container btn">
+      <button>{{load}}</button>
+    </div>
     </div>
   </main>
 </template>
@@ -29,7 +33,8 @@ export default {
   data(){
     return {
       cardSeries,
-      current: 'current series'
+      current: 'current series',
+      load: 'load more',
     }
   }
 }

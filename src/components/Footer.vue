@@ -1,22 +1,23 @@
 <template>
   <footer>
-    <div class="leftFoot">
-      <div class="contain container">
+
+    <div class="contain container">
+      <div class="listFooter">
         <ul 
         v-for="(item, index) in dc" :key="`bottom${index}`">
-          <li >
+          <li>
             <h4>{{item.title }}</h4>  
-            <p v-if="getIndex(index) && index == indexArr">
-              {{item.text[indexArr]}}
+            <p v-for="(text, index) in item.text" :key="`text${index}`">
+              {{text}}
             </p>
- 
           </li>
         </ul>
-        <div class="DcImage">
-          <img :src="imageDc" :alt="imageDc">
-        </div>
+      </div>
+      <div class="DcImage">
+        <img :src="imageDc" :alt="imageDc">
       </div>
     </div>
+ 
     <div class="footerBottom">
       <div class="container">
         <button> sign-up now! </button>
@@ -113,24 +114,6 @@ export default {
       ]
     }
   },
-
-  methods: {
-    getIndex(index){
-      this.indexArr == this.getText(index)
-      
-      console.log('ok',this.indexArr);
-      console.log('ok2',index);
-    },
-
-    getText(index){
-      this.dc[index].text.forEach(text => { 
-        if (text[index] == this.indexArr){
-          return text[index]
-        }
-        console.log('ce la faremo',text);
-      });
-    }
-  }
 }
 </script>
 

@@ -5,6 +5,10 @@
   font-weight: 700;
 }
 
+* {
+  font-size: calc(100% + .5px);
+}
+
 body {
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
@@ -33,5 +37,5 @@ ul li {
 
 .active {
   color: $colorActive;
-  border-bottom: 4px solid $colorActive;
+  border-bottom: 6px solid $colorActive;
 }
